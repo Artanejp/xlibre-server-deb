@@ -1,9 +1,9 @@
-xlibre-server (2:25.0.0.12-1+merged_upstream1) unstable; urgency=medium
+xlibre-server (2:25.0.0.12+mergedupstream.1) unstable; urgency=medium
 
   * Fork from xlibre-deb/xlibre-server .
   * See https://github.com/Artanejp/xlibre-server-deb.git .
 
- -- Kyuma Ohta <whatisthis.sowhat@gmail.com>  Tue, 25 Nov 2025 20:48:18 +0900
+ -- Kyuma Ohta <whatisthis.sowhat@gmail.com>  Tue, 25 Nov 2025 21:05:53 +0900
 
 xlibre-server (2:25.0.0.12-1) unstable; urgency=medium
 
