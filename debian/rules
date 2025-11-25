@@ -156,6 +156,25 @@ endif
 
 	install -m 755 -d debian/xserver-xlibre-core/usr/share/bug/xserver-xorg-core
 	install -m 755 debian/xserver-xlibre-core.bug.script debian/xserver-xlibre-core/usr/share/bug/xserver-xorg-core/script
+
+	# Add documents of upstream, they lack at deb package.
+	mkdir   -p debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/
+	mkdir   -p debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs
+	install -m 644 CONTRIBUTING.md debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs
+	install -m 644 CODE_OF_CONDUCT.md debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs
+	install -m 644 CoC.md debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs
+	install -m 644 README.md debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common
+	install -m 644 .mailmap debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs/dot.mailmap
+	# Release notes.
+	mkdir   -p debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs/relnotes
+	install -m 644  -t debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs/relnotes doc/appendixes/relnotes/*.md
+
+	# README.md of 25.0.0.0 (historical manifesto).
+	mkdir   -p debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs/historical
+	install -m 644 doc/appendixes/historical/About.md  debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs/historical
+	install -m 644 doc/appendixes/historical/README.25.0.0.0.md  debian/xserver-xlibre-common/usr/share/doc/xserver-xlibre-common/extra-docs/historical
+
+
 ifeq ($(DEB_HOST_ARCH_OS), linux)
 	install -d debian/xserver-xlibre-core$(deb_udevdir)/rules.d
 	install -m 644 debian/local/64-xorg-xkb.rules debian/xserver-xlibre-core$(deb_udevdir)/rules.d
